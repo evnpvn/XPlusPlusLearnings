@@ -1,0 +1,36 @@
+/// <summary>
+/// Batchable job test
+/// </summary>
+
+class EvansBatchableJob extends RunBaseBatch
+{
+	//constructors
+	 protected void new()
+	 {
+	 	super();
+	 }
+
+	public static EvansBatchableJob construct()
+    {
+        return new EvansBatchableJob();
+    }
+
+	//entry point
+    public static void main(Args _args)
+    {
+        EvansBatchableJob ebjob = EvansBatchableJob::construct();
+        ebjob.run();
+    }
+
+    //overridden methods
+    protected boolean canRunInNewSession()
+    {
+        return true;
+    }
+
+    public void run()
+    {
+        info("@EvansLabels:Label1");
+    }
+
+}
